@@ -127,12 +127,4 @@ elif mode == "display":
             prediction = model.predict(cropped_img)
             maxindex = int(np.argmax(prediction))
             cv2.putText(frame, emotion_dict[maxindex], (x+20, y-60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
-            
-                    # show the output frame
-        cv2.imshow("Frame", frame)
-        key = cv2.waitKey(1) & 0xFF
-        
-        # if the `q` key was pressed, break from the loop
-        if key == ord("q"):
-            break
 
